@@ -1,0 +1,25 @@
+{
+    "name": "Coq",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "maximedenes.vscoq"
+            ]
+        }
+    },
+    "features": {
+        "common": {
+            "username": "automatic",
+            "uid": "automatic",
+            "gid": "automatic",
+            "installZsh": true
+        }
+    },
+    "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/coq_tutorial,type=bind,consistency=cached",
+    "workspaceFolder": "/workspaces/coq_tutorial",
+    "postStartCommand": "/usr/bin/git config --global gpg.program /usr/bin/gpg",
+    "remoteUser": "coq"
+}
